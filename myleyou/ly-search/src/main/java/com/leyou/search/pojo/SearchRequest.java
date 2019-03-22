@@ -7,6 +7,8 @@
  */
 package com.leyou.search.pojo;
 
+import java.util.Map;
+
 /**
  * 用来接收请求的json数据的类
  */
@@ -15,6 +17,8 @@ public class SearchRequest {
     private String key;// 搜索条件
 
     private Integer page;// 当前页
+
+    private Map<String,String> filter;
 
     private static final Integer DEFAULT_SIZE = 20; // 每页显示的数据条数
 
@@ -42,5 +46,13 @@ public class SearchRequest {
 
     public Integer getSize() {
         return DEFAULT_SIZE;
+    }
+
+    public Map<String, String> getFilter() {
+        return filter;
+    }
+
+    public void setFilter(Map<String, String> filter) {
+        this.filter = filter;
     }
 }

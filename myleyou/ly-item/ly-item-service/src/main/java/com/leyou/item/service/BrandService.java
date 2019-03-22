@@ -121,4 +121,17 @@ public class BrandService {
         }
         return brands;
     }
+
+    /**
+     * 批量查寻
+     * @param ids
+     * @return
+     */
+    public List<Brand> queryBrandByIds(List<Long> ids) {
+        List<Brand> brands = brandMapper.selectByIdList(ids);
+        if(CollectionUtils.isEmpty(brands)){
+            throw new LyException(ExceptionEnums.BRAND_NOT_FOND);
+        }
+        return brands;
+    }
 }
